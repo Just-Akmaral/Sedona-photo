@@ -1,0 +1,121 @@
+/**-----------------COLORS----------------------**/
+
+
+
+/**-----------------SCREEN WIDTH----------------------**/
+
+@dekstop-width: 1200px;
+@tablet-width: 700px;
+@mobile-width: 320px;
+
+/**-----------------FONT SIZE----------------------**/
+@dekstop-font-size: 18px;
+@dekstop-font-size-h1: @dekstop-font-size + 32; // 50
+@dekstop-font-size-h2: @dekstop-font-size + 12; // 30
+@dekstop-font-size-h3: @dekstop-font-size + 6; // 24
+@dekstop-font-size-p: @dekstop-font-size + 6; // 24
+@dekstop-font-size-btn:  @dekstop-font-size + 3; // 21
+
+@tablet-font-size: 14px;
+@tablet-font-size-h1: @mobile-font-size + 26; // 40
+@tablet-font-size-h2: @mobile-font-size + 16; // 30
+@tablet-font-size-h3: @mobile-font-size + 6; // 20
+@tablet-font-size-p: @mobile-font-size + 4; // 18
+@tablet-font-size-btn: @mobile-font-size + 4; // 18
+@tablet-font-size-oth: @mobile-font-size + 2; //16
+
+@mobile-font-size: 14px;
+@mobile-font-size-h1: @mobile-font-size + 4; // 18
+@mobile-font-size-h2: @mobile-font-size + 10; // 24
+@mobile-font-size-btn: @mobile-font-size + 4; // 18
+
+/**-----------------BASE STYLE----------------------**/
+@font-family: 'ptsans', 'Arial', sans-serif;
+
+// @base-text-color: @blue-color;
+// @base-background-color: white;
+
+/*------------------MIXINS---------------*/
+// .setColorStyle(@color: @blue-color; @backcolor: white){
+//   color: @color;
+//   background-color: @backcolor;
+// }
+
+.setTextStyle(){
+  font-family: @font-family;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+}
+.setTextSize(@size: @dekstop-font-size; @height: 30px; @weight: normal) {
+ font-size:@size;
+ line-height:@height;
+ font-weight:@weight;
+}
+.setFlex(@direction: row; @content: center) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: @content;
+  flex-direction: @direction;
+}
+.zero-centered() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.setPaddingLR(@value: 130px){
+  padding-left: @value;
+  padding-right: @value;
+}
+.setPaddingTB(@value){
+  padding-top: @value;
+  padding-bottom: @value;
+}
+.setMarginLR(@value: 0px){
+  margin-left: @value;
+  margin-right: @value;
+}
+.setMarginTB(@value: 0px){
+  margin-top: @value;
+  margin-bottom: @value;
+}
+.setContentImg(@name){
+  content: url("img/@{name}");
+}
+
+//
+// .setHeaderLogo(@namexd, @namext, @namexm){
+//     content: url("img/@{namexd}");
+//     @media (max-width: @tablet-width) {
+//         content: url("img/@{namexm}");
+//     }
+//     @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+//         content: url("img/@{namext}");
+//     }
+// }
+// .setFeatureImg(@name1xd, @name2xd, @name1xt, @name2xt){
+//   content: url("img/@{name1xd}");
+//   content: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
+//   @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+//     content: url("img/@{name1xt}");
+//     content: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
+//   }
+// }
+// .setMapImg(@name1xd, @name2xd, @name1xt, @name2xt, @name1xm, @name2xm){
+//   background-image: url("img/@{name1xd}");
+//   background-image: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
+//   background-size: cover;
+//   @media (max-width: @tablet-width) {
+//     background-image: url("img/@{name1xm}");
+//     background-image: -webkit-image-set(url("img/@{name1xm}") 1x, url("img/@{name2xm}") 2x);
+//   }
+//
+//   @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+//     background-image: url("img/@{name1xt}");
+//     background-image: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
+//   }
+// }

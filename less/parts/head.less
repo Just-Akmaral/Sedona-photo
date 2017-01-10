@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'ptsans';
+  src:  url('../fonts/web/ptsans.woff2') format('woff2'),
+        url('../fonts/web/ptsans.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'ptsans';
+  src:  url('../fonts/web/ptsansbold.woff2') format('woff2'),
+        url('../fonts/web/ptsansbold.woff') format('woff');
+  font-weight: bold;
+}
+
+// html, body{
+//   .setColorStyle();
+//   .setTextStyle();
+//   background-size: cover;
+//  }
+ body{
+    min-width: @mobile-width;
+ }
+
+ .container { 
+   width: 280px;
+   padding: 0 20px;
+   margin: 0 auto;
+ } 
+
+// От 700px планшетная версия 
+@media (min-width: 700px) { 
+  .container { 
+    width: 620px;
+    padding: 0 40px;
+    } 
+  } 
+ 
+// От 1200 десктопная версия 
+@media (min-width: 1200px) { 
+  .container { 
+    width: 960px;
+    padding: 0 120px;
+    } 
+   }
+/*-------------START - HEAD--------------*/
+
+/*-------------END - HEAD--------------*/
