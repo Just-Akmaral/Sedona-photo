@@ -1,14 +1,16 @@
 /**-----------------COLORS----------------------**/
-
+@blue-color: rgba(129, 179, 210, 1);
+@grey-color: rgba(202, 202, 202, 1);
 
 
 /**-----------------SCREEN WIDTH----------------------**/
 
 @dekstop-width: 1200px;
-@tablet-width: 700px;
+@tablet-width: 768px;
 @mobile-width: 320px;
 
 /**-----------------FONT SIZE----------------------**/
+/** подправить размер шрифтов**/
 @dekstop-font-size: 18px;
 @dekstop-font-size-h1: @dekstop-font-size + 32; // 50
 @dekstop-font-size-h2: @dekstop-font-size + 12; // 30
@@ -30,16 +32,17 @@
 @mobile-font-size-btn: @mobile-font-size + 4; // 18
 
 /**-----------------BASE STYLE----------------------**/
-@font-family: 'ptsans', 'Arial', sans-serif;
 
-// @base-text-color: @blue-color;
-// @base-background-color: white;
+@font-family: 'ptsans', 'Arial', sans-serif;
+@base-text-color: black;
+@base-background-color: white;
 
 /*------------------MIXINS---------------*/
-// .setColorStyle(@color: @blue-color; @backcolor: white){
-//   color: @color;
-//   background-color: @backcolor;
-// }
+
+ .setColorStyle(@color: @base-text-color; @backcolor: @base-background-color){
+  color: @color;
+  background-color: @backcolor;
+}
 
 .setTextStyle(){
   font-family: @font-family;
@@ -48,17 +51,20 @@
   font-style: normal;
   text-align: center;
 }
+
 .setTextSize(@size: @dekstop-font-size; @height: 30px; @weight: normal) {
- font-size:@size;
- line-height:@height;
- font-weight:@weight;
+ font-size: @size;
+ line-height: @height;
+ font-weight: @weight;
 }
+
 .setFlex(@direction: row; @content: center) {
   display: flex;
   flex-wrap: wrap;
   justify-content: @content;
   flex-direction: @direction;
 }
+
 .zero-centered() {
     position: absolute;
     top: 0;
@@ -67,27 +73,32 @@
     bottom: 0;
     margin: auto;
 }
+
 .setPaddingLR(@value: 130px){
   padding-left: @value;
   padding-right: @value;
 }
+
 .setPaddingTB(@value){
   padding-top: @value;
   padding-bottom: @value;
 }
+
 .setMarginLR(@value: 0px){
   margin-left: @value;
   margin-right: @value;
 }
+
 .setMarginTB(@value: 0px){
   margin-top: @value;
   margin-bottom: @value;
 }
+
 .setContentImg(@name){
   content: url("img/@{name}");
 }
 
-//
+//some retina
 // .setHeaderLogo(@namexd, @namext, @namexm){
 //     content: url("img/@{namexd}");
 //     @media (max-width: @tablet-width) {

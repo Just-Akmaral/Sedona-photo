@@ -1,0 +1,331 @@
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+/**-----------------COLORS----------------------**/
+/**-----------------SCREEN WIDTH----------------------**/
+/**-----------------FONT SIZE----------------------**/
+/** подправить размер шрифтов**/
+/**-----------------BASE STYLE----------------------**/
+/*------------------MIXINS---------------*/
+@font-face {
+  font-family: 'ptsans';
+  src: url('../fonts/web/ptsans.woff2') format('woff2'), url('../fonts/web/ptsans.woff') format('woff');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'ptsans';
+  src: url('../fonts/web/ptsansbold.woff2') format('woff2'), url('../fonts/web/ptsansbold.woff') format('woff');
+  font-weight: bold;
+}
+html,
+body {
+  color: black;
+  background-color: white;
+  font-family: 'ptsans', 'Arial', sans-serif;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  background-size: cover;
+}
+body {
+  min-width: 320px;
+}
+.container {
+  width: 280px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+   .container {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 768px) {
+   .container {
+    width: 768px;
+  }
+}
+@media (min-width: 1200px) {
+   .container {
+    width: 1200px;
+  }
+}
+/*-------------START - HEAD--------------*/
+.main-header {
+  align-items: baseline;
+  color: black;
+  background-color: yellow;
+}
+.header-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  color: black;
+  background-color: green;
+}
+.header-navigation ul li {
+  list-style-type: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+  background-color: red;
+}
+.header-navigation ul li a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+.header-navigation #mobile-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header-navigation .burger {
+    position: absolute;
+    top: 0px;
+    height: 14px;
+    margin-left: 100px;
+    width: 20px;
+    line-height: 2px;
+    cursor: pointer;
+  }
+  .header-navigation .burger span,
+  .header-navigation .burger::before,
+  .header-navigation .burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 5px;
+    background-color: black;
+  }
+  .header-navigation .burger::before {
+    top: 18px;
+  }
+  .header-navigation .burger::after {
+    top: auto;
+    bottom: 0;
+  }
+  .header-navigation #mobile-menu:checked ~ .burger::before,
+  .header-navigation #mobile-menu:checked ~ .burger::after {
+    width: 50px;
+    transform: rotate(-45deg);
+    top: auto;
+    left: -4px;
+    bottom: 5px;
+  }
+  .header-navigation #mobile-menu:checked ~ .burger::after {
+    transform: rotate(45deg);
+  }
+  .header-navigation #mobile-menu:checked ~ .burger span {
+    display: none;
+  }
+  .header-navigation #mobile-menu:checked ~ ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+/*-------------START - MAIN--------------*/
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+.gallery-content figure:first-of-type {
+  flex-grow: 1;
+  width: 1200px;
+}
+/*-------------START - FOOTER--------------*/
+.main-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: baseline;
+}
+.main-footer .footer-copyright {
+  text-align: right;
+}
