@@ -231,9 +231,18 @@ body {
 }
 /*-------------START - HEAD--------------*/
 .main-header {
-  align-items: baseline;
   color: black;
   background-color: yellow;
+  position: relative;
+}
+.header-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 140px;
 }
 .header-navigation ul {
   display: flex;
@@ -242,11 +251,16 @@ body {
   flex-direction: row;
   color: black;
   background-color: green;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .header-navigation ul {
+    display: none;
+  }
 }
 .header-navigation ul li {
   list-style-type: none;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
   color: black;
   background-color: red;
 }
@@ -261,7 +275,7 @@ body {
 @media (max-width: 768px) {
   .header-navigation .burger {
     position: absolute;
-    top: 0px;
+    top: 10px;
     height: 14px;
     margin-left: 100px;
     width: 20px;
@@ -308,15 +322,79 @@ body {
   }
 }
 /*-------------START - MAIN--------------*/
+.gallery {
+  color: black;
+  background-color: yellow;
+}
+.gallery h1,
+.gallery p {
+  color: black;
+  background-color: red;
+  padding-left: 378px;
+  padding-right: 378px;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .gallery h1,
+  .gallery p {
+    padding-left: 165px;
+    padding-right: 165px;
+  }
+}
+@media (max-width: 768px) {
+  .gallery h1,
+  .gallery p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .gallery-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
+  color: black;
+  background-color: aqua;
+}
+.gallery-content figure {
+  margin: 0;
+  color: black;
+  background-color: red;
 }
 .gallery-content figure:first-of-type {
   flex-grow: 1;
   width: 1200px;
+}
+.gallery-content figure figcaption {
+  text-align: left;
+  color: white;
+  background-color: rgba(72, 84, 97, 0.3);
+}
+.gallery-content figure figcaption .like-count span {
+  font-size: 0;
+}
+.gallery-content figure figcaption small {
+  display: block;
+}
+.video h2,
+.video p {
+  color: black;
+  background-color: red;
+  padding-left: 378px;
+  padding-right: 378px;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .video h2,
+  .video p {
+    padding-left: 165px;
+    padding-right: 165px;
+  }
+}
+@media (max-width: 768px) {
+  .video h2,
+  .video p {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 /*-------------START - FOOTER--------------*/
 .main-footer {

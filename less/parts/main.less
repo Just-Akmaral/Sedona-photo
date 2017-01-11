@@ -1,12 +1,41 @@
 /*-------------START - MAIN--------------*/
 .sedona-photo{}
 .gallery{
+  .setColorStyle(@backcolor: yellow;);
+  h1,p{
+    .setColorStyle(@backcolor: red;);
+    .setPaddingLR(378px);
+      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {.setPaddingLR(165px);}
+      @media (max-width: @tablet-width){.setPaddingLR();}
+  }
   &-content{
     .setFlex();
+    .setColorStyle(@backcolor: aqua;);
     figure{
-        &:first-of-type{flex-grow: 1;width: @dekstop-width;}
+      margin: 0;
+      .setColorStyle(@backcolor: red;);
+        &:first-of-type{flex-grow: 1; width: @dekstop-width;}
+        figcaption{
+          text-align: left;
+        //  padding-top: 25px;
+          .setColorStyle(@color: white; @backcolor: @caption-color;);
+          h3{}
+          .like-count{
+          //  float: right;
+            //text-align: right;
+            span{font-size: 0;}
+          }
+          small{display: block;}
+        }
     }
   }
 }
-.video{}
+.video{
+  h2,p{
+    .setColorStyle(@backcolor: red;);
+    .setPaddingLR(378px);
+      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {.setPaddingLR(165px);}
+      @media (max-width: @tablet-width){.setPaddingLR();}
+  }
+}
 /*-------------END - MAIN--------------*/
