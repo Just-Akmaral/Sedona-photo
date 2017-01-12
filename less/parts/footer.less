@@ -3,9 +3,18 @@
   .setFlex(@content: space-around);
   align-content: baseline;
   .footer{
-    &-hashtag{}
+    &-hashtag{
+      b{
+        .setTextSize(@size: @dekstop-font-size-p; @height: @dekstop-line-height-h; @weight: bold);//21 26 bold
+      }
+    }
     &-social{}
-    &-copyright{text-align: right;}
+    &-copyright{
+      b{
+        text-align: right;
+        .setTextSize(@height: @dekstop-line-height-h; );//14 26 regular
+      }
+    }
   }
 }
 /*-------------END - FOOTER--------------*/

@@ -10,13 +10,21 @@
 @mobile-width: 320px;
 
 /**-----------------FONT SIZE----------------------**/
-/** подправить размер шрифтов**/
-@dekstop-font-size: 18px;
-@dekstop-font-size-h1: @dekstop-font-size + 32; // 50
-@dekstop-font-size-h2: @dekstop-font-size + 12; // 30
-@dekstop-font-size-h3: @dekstop-font-size + 6; // 24
-@dekstop-font-size-p: @dekstop-font-size + 6; // 24
-@dekstop-font-size-btn:  @dekstop-font-size + 3; // 21
+/** подправить размер шрифтов
+h1 30 26
+p 14 24
+li 14 26
+неродные 14 24
+автор 14 24
+h2 все еще сомневаетесь 30 26
+p 14 24
+hashtag 21 26**/
+@dekstop-font-size: 14px;
+@dekstop-font-size-p: @dekstop-font-size + 7; // 21
+@dekstop-font-size-h: @dekstop-font-size + 16; // 30
+
+@dekstop-line-height: 24px; // 24
+@dekstop-line-height-h: @dekstop-line-height + 2; // 26
 
 @tablet-font-size: 14px;
 @tablet-font-size-h1: @mobile-font-size + 26; // 40
@@ -53,7 +61,7 @@
 //  text-transform: uppercase;
 }
 
-.setTextSize(@size: @dekstop-font-size; @height: 30px; @weight: normal) {
+.setTextSize(@size: @dekstop-font-size; @height: @dekstop-line-height; @weight: normal) {
  font-size: @size;
  line-height: @height;
  font-weight: @weight;

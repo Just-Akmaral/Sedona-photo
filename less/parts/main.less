@@ -1,12 +1,28 @@
 /*-------------START - MAIN--------------*/
-.sedona-photo{}
+.sedona-photo{
+  width: 1200px;
+  height: 302px;
+}
 .gallery{
   .setColorStyle(@backcolor: yellow;);
+  .setPaddingTB(35px);
   h1,p{
-    .setColorStyle(@backcolor: red;);
+    margin: 0;
     .setPaddingLR(378px);
+    .setPaddingTB(17px);
       @media (min-width: @tablet-width) and (max-width: @dekstop-width) {.setPaddingLR(165px);}
       @media (max-width: @tablet-width){.setPaddingLR();}
+  }
+  h1{
+    .setColorStyle(@backcolor: red;);
+    .setPaddingTB(20px);
+    margin-top: 60px;
+    .setTextSize(@size: @dekstop-font-size-h; @height:@dekstop-line-height-h; @weight: bold) // 30 26 bold
+  }
+  p{
+    .setPaddingTB(13px);
+    margin-bottom: 60px;
+    .setTextSize(); // 14 24 regular
   }
   &-content{
     .setFlex();
@@ -17,15 +33,24 @@
         &:first-of-type{flex-grow: 1; width: @dekstop-width;}
         figcaption{
           text-align: left;
-        //  padding-top: 25px;
           .setColorStyle(@color: white; @backcolor: @caption-color;);
-          h3{}
+          padding: 20px;
+          position: relative;
+          h3{
+            .setTextSize(@weight: bold;); // 14 24 bold
+          }
           .like-count{
-          //  float: right;
-            //text-align: right;
+            .setTextSize(@weight: bold;); // 14 24 bold
+            height: 24px;
+            .zero-centered();
+            left: auto;
+            right: 22px;
             span{font-size: 0;}
           }
-          small{display: block;}
+          small{
+            display: block;
+            .setTextSize();//14 24 regular
+          }
         }
     }
   }
@@ -36,6 +61,12 @@
     .setPaddingLR(378px);
       @media (min-width: @tablet-width) and (max-width: @dekstop-width) {.setPaddingLR(165px);}
       @media (max-width: @tablet-width){.setPaddingLR();}
+  }
+  h2{
+    .setTextSize(@size: @dekstop-font-size-h; @height:@dekstop-line-height-h; @weight: bold) // 30 26 bold
+  }
+  p{
+    .setTextSize(); // 14 24 regular
   }
 }
 /*-------------END - MAIN--------------*/

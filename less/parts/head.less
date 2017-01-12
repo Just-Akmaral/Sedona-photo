@@ -15,11 +15,13 @@
       .setFlex(@content: space-around);
       .setColorStyle(@backcolor: green;);
       margin: 0;
+      padding: 10px;
       @media (max-width: @tablet-width){display: none;}
       li{
           list-style-type: none;
-          padding: 15px;
+          padding: 5px;
           .setColorStyle(@backcolor: red;);
+          .setTextSize(@height: @dekstop-line-height-h; @weight: bold;);// 14 26 bold
           a{
             color:inherit;
             text-decoration: none;

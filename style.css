@@ -183,7 +183,15 @@ th {
 /**-----------------COLORS----------------------**/
 /**-----------------SCREEN WIDTH----------------------**/
 /**-----------------FONT SIZE----------------------**/
-/** подправить размер шрифтов**/
+/** подправить размер шрифтов
+h1 30 26
+p 14 24
+li 14 26
+неродные 14 24
+автор 14 24
+h2 все еще сомневаетесь 30 26
+p 14 24
+hashtag 21 26**/
 /**-----------------BASE STYLE----------------------**/
 /*------------------MIXINS---------------*/
 @font-face {
@@ -252,6 +260,7 @@ body {
   color: black;
   background-color: green;
   margin: 0;
+  padding: 10px;
 }
 @media (max-width: 768px) {
   .header-navigation ul {
@@ -260,9 +269,12 @@ body {
 }
 .header-navigation ul li {
   list-style-type: none;
-  padding: 15px;
+  padding: 5px;
   color: black;
   background-color: red;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: bold;
 }
 .header-navigation ul li a {
   color: inherit;
@@ -322,16 +334,23 @@ body {
   }
 }
 /*-------------START - MAIN--------------*/
+.sedona-photo {
+  width: 1200px;
+  height: 302px;
+}
 .gallery {
   color: black;
   background-color: yellow;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 .gallery h1,
 .gallery p {
-  color: black;
-  background-color: red;
+  margin: 0;
   padding-left: 378px;
   padding-right: 378px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
   .gallery h1,
@@ -346,6 +365,24 @@ body {
     padding-left: 0px;
     padding-right: 0px;
   }
+}
+.gallery h1 {
+  color: black;
+  background-color: red;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 60px;
+  font-size: 30px;
+  line-height: 26px;
+  font-weight: bold;
+}
+.gallery p {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
 }
 .gallery-content {
   display: flex;
@@ -368,12 +405,36 @@ body {
   text-align: left;
   color: white;
   background-color: rgba(72, 84, 97, 0.3);
+  padding: 20px;
+  position: relative;
+}
+.gallery-content figure figcaption h3 {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.gallery-content figure figcaption .like-count {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  left: auto;
+  right: 22px;
 }
 .gallery-content figure figcaption .like-count span {
   font-size: 0;
 }
 .gallery-content figure figcaption small {
   display: block;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
 }
 .video h2,
 .video p {
@@ -396,6 +457,16 @@ body {
     padding-right: 0px;
   }
 }
+.video h2 {
+  font-size: 30px;
+  line-height: 26px;
+  font-weight: bold;
+}
+.video p {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+}
 /*-------------START - FOOTER--------------*/
 .main-footer {
   display: flex;
@@ -404,6 +475,14 @@ body {
   flex-direction: row;
   align-content: baseline;
 }
-.main-footer .footer-copyright {
+.main-footer .footer-hashtag b {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+}
+.main-footer .footer-copyright b {
   text-align: right;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: normal;
 }
