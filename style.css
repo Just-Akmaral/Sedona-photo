@@ -391,10 +391,7 @@ body {
   margin: 0;
   flex-grow: 1;
   position: relative;
-}
-.gallery-content figure:first-of-type {
-  color: black;
-  background-color: red;
+  overflow: hidden;
 }
 .gallery-content figure img {
   display: block;
@@ -435,9 +432,17 @@ body {
   font-size: 14px;
   line-height: 24px;
   font-weight: bold;
+  position: relative;
 }
 .gallery-content figure figcaption aside .like-count span {
   font-size: 0;
+  position: absolute;
+  width: 32px;
+  height: 30px;
+  right: 100%;
+  bottom: -2px;
+  margin-right: 10px;
+  content: url("img/like.svg");
 }
 .video {
   color: black;
