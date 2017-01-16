@@ -335,12 +335,11 @@ body {
 }
 /*-------------START - MAIN--------------*/
 .sedona-photo {
-  width: 1200px;
-  height: 302px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
+  clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
 }
 .gallery {
-  color: black;
-  background-color: yellow;
   padding-top: 35px;
   padding-bottom: 35px;
 }
@@ -367,8 +366,6 @@ body {
   }
 }
 .gallery h1 {
-  color: black;
-  background-color: red;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 60px;
@@ -389,59 +386,71 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  color: black;
-  background-color: aqua;
 }
 .gallery-content figure {
   margin: 0;
+  flex-grow: 1;
+  position: relative;
+}
+.gallery-content figure:first-of-type {
   color: black;
   background-color: red;
 }
-.gallery-content figure:first-of-type {
-  flex-grow: 1;
-  width: 1200px;
+.gallery-content figure img {
+  display: block;
 }
 .gallery-content figure figcaption {
   text-align: left;
   color: white;
   background-color: rgba(72, 84, 97, 0.3);
   padding: 20px;
-  position: relative;
-}
-.gallery-content figure figcaption h3 {
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: bold;
-}
-.gallery-content figure figcaption .like-count {
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: bold;
-  height: 24px;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  margin: auto;
-  left: auto;
-  right: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
-.gallery-content figure figcaption .like-count span {
-  font-size: 0;
+.gallery-content figure figcaption section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
-.gallery-content figure figcaption small {
-  display: block;
+.gallery-content figure figcaption section h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.gallery-content figure figcaption section small {
   font-size: 14px;
   line-height: 24px;
   font-weight: normal;
 }
+.gallery-content figure figcaption aside .like-count {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.gallery-content figure figcaption aside .like-count span {
+  font-size: 0;
+}
+.video {
+  color: black;
+  background-color: aqua;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 .video h2,
 .video p {
-  color: black;
-  background-color: red;
   padding-left: 378px;
   padding-right: 378px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 @media (min-width: 768px) and (max-width: 1200px) {
   .video h2,
@@ -458,14 +467,28 @@ body {
   }
 }
 .video h2 {
+  color: black;
+  background-color: red;
   font-size: 30px;
   line-height: 26px;
   font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .video p {
+  color: black;
+  background-color: green;
   font-size: 14px;
   line-height: 24px;
   font-weight: normal;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.video-content {
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 /*-------------START - FOOTER--------------*/
 .main-footer {
@@ -473,12 +496,45 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
-  align-content: baseline;
+  align-content: center;
 }
 .main-footer .footer-hashtag b {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
+  padding: 13px 0px;
+}
+.main-footer .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.main-footer .footer-social .social-btn {
+  display: block;
+  vertical-align: top;
+  width: 46px;
+  height: 48px;
+  background: #81b3d2;
+  margin: 0 10px;
+}
+.main-footer .footer-social .social-btn span {
+  visibility: hidden;
+}
+.main-footer .footer-social .social-btn:hover {
+  background: #669ec0;
+}
+.main-footer .footer-social .social-btn:active {
+  background: #5496bd;
+}
+.main-footer .footer-social .icon-twitter {
+  content: url("img/twitter.svg") no-repeat center;
+}
+.main-footer .footer-social .icon-youtube {
+  content: url("img/youtube.svg") no-repeat center;
+}
+.main-footer .footer-social .icon-facebook {
+  content: url("img/facebook.svg") no-repeat center;
 }
 .main-footer .footer-copyright b {
   text-align: right;

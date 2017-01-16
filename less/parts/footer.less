@@ -1,14 +1,33 @@
 /*-------------START - FOOTER--------------*/
 .main-footer{
   .setFlex(@content: space-around);
-  align-content: baseline;
+  align-content: center;
   .footer{
     &-hashtag{
       b{
         .setTextSize(@size: @dekstop-font-size-p; @height: @dekstop-line-height-h; @weight: bold);//21 26 bold
+        padding: 13px 0px;
       }
     }
-    &-social{}
+    &-social{
+      .setFlex(@content: space-between);
+      .social-btn{
+        display: block;
+        vertical-align: top;
+        width: 46px;
+        height: 48px;
+        background: @blue-color;
+        margin: 0 10px;
+        span{visibility:hidden;}
+        &:hover{background: @blue-color-dark;}
+        &:active{background: @blue-color-medium;}
+      }
+      .icon{
+        &-twitter{content: url("img/twitter.svg") no-repeat center;}
+        &-youtube{content: url("img/youtube.svg") no-repeat center;}
+        &-facebook{content: url("img/facebook.svg") no-repeat center;}
+      }
+    }
     &-copyright{
       b{
         text-align: right;
