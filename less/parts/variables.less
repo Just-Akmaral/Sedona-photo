@@ -3,6 +3,7 @@
 @blue-color-dark: rgba(102, 158, 192, 1);
 @blue-color-medium: rgba(84, 150, 189, 1);
 @grey-color: rgba(202, 202, 202, 1);
+@grey-color-dark: rgba(202, 202, 202, 1);
 @caption-color: rgba(72, 84, 97, 0.3);
 
 /**-----------------SCREEN WIDTH----------------------**/
@@ -12,34 +13,61 @@
 @mobile-width: 320px;
 
 /**-----------------FONT SIZE----------------------**/
-/** подправить размер шрифтов
+/**
+desktop
 h1 30 26
 p 14 24
 li 14 26
 неродные 14 24
 автор 14 24
+like 14 24
 h2 все еще сомневаетесь 30 26
 p 14 24
-hashtag 21 26**/
+hashtag 21 26
+разработано 14 26
+
+tablet
+h1 30 26 like desktop
+p 14 24 like desktop
+li 14 26 like desktop
+неродные 14 24 like desktop
+автор 14 24 like desktop
+like 14 24 like desktop
+h2 все еще сомневаетесь 30 26 like desktop
+p 14 24 like desktop
+hashtag 21 26 like desktop
+разработано 14 26 like desktop
+
+mobile
+h1 18 26
+p 14 24 like desktop
+li 18 40
+неродные 14 24 like desktop
+автор 14 24 like desktop
+like 14 24 like desktop
+h2 все еще сомневаетесь 18 26
+p 14 24 like desktop
+hashtag 21 26 like desktop
+разработано 14 26 like desktop
+**/
 @dekstop-font-size: 14px;
 @dekstop-font-size-p: @dekstop-font-size + 7; // 21
 @dekstop-font-size-h: @dekstop-font-size + 16; // 30
-
 @dekstop-line-height: 24px; // 24
 @dekstop-line-height-h: @dekstop-line-height + 2; // 26
 
 @tablet-font-size: 14px;
-@tablet-font-size-h1: @mobile-font-size + 26; // 40
-@tablet-font-size-h2: @mobile-font-size + 16; // 30
-@tablet-font-size-h3: @mobile-font-size + 6; // 20
-@tablet-font-size-p: @mobile-font-size + 4; // 18
-@tablet-font-size-btn: @mobile-font-size + 4; // 18
-@tablet-font-size-oth: @mobile-font-size + 2; //16
+@tablet-font-size-p: @tablet-font-size + 7; // 21
+@tablet-font-size-h: @tablet-font-size + 16; // 30
+@tablet-line-height: 24px; // 24
+@tablet-line-height-h: @tablet-line-height + 2; // 26
 
 @mobile-font-size: 14px;
-@mobile-font-size-h1: @mobile-font-size + 4; // 18
-@mobile-font-size-h2: @mobile-font-size + 10; // 24
-@mobile-font-size-btn: @mobile-font-size + 4; // 18
+@mobile-font-size-p: @mobile-font-size + 0; // 21
+@mobile-font-size-h: @mobile-font-size + 4; // 18
+@mobile-line-height: 24px; // 24
+@mobile-line-height-h: @mobile-line-height + 2; // 26
+@mobile-line-height-li: @mobile-line-height + 16; // 40
 
 /**-----------------BASE STYLE----------------------**/
 
@@ -60,7 +88,7 @@ hashtag 21 26**/
   font-weight: normal;
   font-style: normal;
   text-align: center;
-//  text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .setTextSize(@size: @dekstop-font-size; @height: @dekstop-line-height; @weight: normal) {
@@ -104,29 +132,41 @@ hashtag 21 26**/
   margin-top: @value;
   margin-bottom: @value;
 }
-
-.setContentImg(@name){
-  content: url("img/@{name}");
+.setImgContent(@named, @namet, @namem){
+  content: url("img/@{named}");
+  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+    content: url("img/@{namet}");
+  }
+  @media (max-width: @tablet-width) {
+     content: url("img/@{namem}");
+  }
 }
-
-//some retina
-// .setHeaderLogo(@namexd, @namext, @namexm){
-//     content: url("img/@{namexd}");
-//     @media (max-width: @tablet-width) {
-//         content: url("img/@{namexm}");
-//     }
-//     @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-//         content: url("img/@{namext}");
-//     }
-// }
-// .setFeatureImg(@name1xd, @name2xd, @name1xt, @name2xt){
-//   content: url("img/@{name1xd}");
-//   content: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
-//   @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-//     content: url("img/@{name1xt}");
-//     content: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
-//   }
-// }
+ .setImgRetinaContent(@name1xd, @name2xd, @name1xt, @name2xt, @name1xm, @name2xm){
+  content: url("img/@{name1xd}");
+  content: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
+  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+    content: url("img/@{name1xt}");
+    content: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
+   }
+   @media (max-width: @tablet-width) {
+     content: url("img/@{name1xm}");
+     content: -webkit-image-set(url("img/@{name1xm}") 1x, url("img/@{name2xm}") 2x);
+   }
+ }
+ .setGalleryPhoto(@number: 1){
+   &:nth-of-type(@{number}){
+     img{
+       .setImgRetinaContent(
+         @name1xd:"gallery-photo-@{number}-desktop.jpg",
+         @name2xd:"gallery-photo-@{number}-desktop.jpg",
+         @name1xt:"gallery-photo-@{number}-tablet.jpg",
+         @name2xt:"gallery-photo-@{number}-tablet.jpg",
+         @name1xm:"gallery-photo-@{number}-mobile.jpg",
+         @name2xm:"gallery-photo-@{number}-mobile.jpg"
+         );
+     }
+   }
+ }
 // .setMapImg(@name1xd, @name2xd, @name1xt, @name2xt, @name1xm, @name2xm){
 //   background-image: url("img/@{name1xd}");
 //   background-image: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);

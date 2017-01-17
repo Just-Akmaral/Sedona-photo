@@ -2,13 +2,22 @@
 .main-header{
 //  .setFlex();
 //  align-items: baseline;
-  .setColorStyle(@backcolor: yellow;);
+//  .setColorStyle(@backcolor: yellow;);
   position: relative;
+  min-height: 56px;
 }
 .header{
   &-logo{
     .zero-centered();
+    z-index: 100;
     width: 140px;
+    .setImgContent(
+      @named:"header-logo-desktop.png",
+      @namet:"header-logo-tablet.svg",
+      @namem:"header-logo-mobile.svg"
+      );
+      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {width: 102px;}
+      @media (max-width: @tablet-width){width: 102px;}
   }
   &-navigation{
     ul{
@@ -22,6 +31,9 @@
           padding: 5px;
           .setColorStyle(@backcolor: red;);
           .setTextSize(@height: @dekstop-line-height-h; @weight: bold;);// 14 26 bold
+          @media (max-width: @tablet-width){
+            .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-li; @weight: bold;);// 18 40 bold}
+          }
           a{
             color:inherit;
             text-decoration: none;
@@ -37,9 +49,9 @@
       .burger {
         position: absolute;
         top: 10px;
-        height: 14px;
+        width: 23px;
+        height: 20px;
         margin-left: 100px;
-        width: 20px;
         line-height: 2px;
         cursor: pointer;
          span,&::before,&::after{
@@ -47,12 +59,12 @@
            position: absolute;
            left: 0;
            top: 0;
-           width: 50px;
-           height: 5px;
-           background-color: black;
+           width: 23px;
+           height: 4px;
+           background-color: @blue-color;
          }
          &::before {
-           top: 18px;
+           top: 8px;
          }
          &::after {
            top: auto;
@@ -71,7 +83,7 @@
       }
       #mobile-menu:checked ~ .burger::before,
       #mobile-menu:checked ~ .burger::after{
-        width: 50px;
+        width: 23px;
         transform: rotate(-45deg);
         top: auto;
         left: -4px;
@@ -87,7 +99,6 @@
         .setFlex(@direction: column);
       }
     }
-    //burger end
   }
 }
 /*-------------END - HEAD--------------*/
