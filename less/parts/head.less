@@ -1,36 +1,57 @@
 /*-------------START - HEAD--------------*/
 .main-header{
-  .setFlex();
-//  align-items: baseline;
-//  .setColorStyle(@backcolor: yellow;);
-  position: relative;
+  .setFlex(@direction: column;);
   min-height: 56px;
 }
 .header{
   &-logo{
     .zero-centered();
+    position: absolute;
+    bottom: auto;
+    width: 137px;
     z-index: 50;
     .setImgContent(
       @named:"header-logo-desktop.png",
       @namet:"header-logo-tablet.svg",
       @namem:"header-logo-mobile.svg");
     @media (min-width: @tablet-width) and (max-width: @dekstop-width) {width: 102px;}
-    @media (max-width: @tablet-width){width: 102px;order: 1;}
+    @media (max-width: @tablet-width){width: 102px; order: 1; position: static;}
   }
   &-navigation{
-    width: 100%;
+  //  width: 100%;
+    position: relative;
     ul{
-      .setFlex(@content: space-around);
+      .setFlex(@content: space-around;);
       margin: 0;
+      padding: 0;
       padding: 10px;
       @media (max-width: @tablet-width){display: none;padding: 0;}
       li{
           list-style-type: none;
-          padding: 5px;
+          .setPaddingTB(5px);
+          &:nth-of-type(4n-2){
+            margin-right: 230px;
+          }
+          &:nth-of-type(4n-1),&:nth-of-type(4n){
+            text-align: right;
+          }
           .setTextSize(@height: @dekstop-line-height-h; @weight: bold;);// 14 26 bold
           &:hover{color: @blue-color;}
           &:active{color: @grey-color;}
+          @media (min-width: @tablet-width) and (max-width: @dekstop-width){
+          //  margin: auto;
+            &:nth-of-type(4n-2){
+              margin-right: 150px;
+            }
+          }
           @media (max-width: @tablet-width){
+            .setPaddingLR(5x);
+            &:nth-of-type(4n-2){
+                margin-right: 0px;
+            }
+            &:nth-of-type(4n-1),&:nth-of-type(4n){
+              text-align: center;
+            }
             .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-li; @weight: bold;);// 18 40 bold}
             .setColorStyle(@color: white; @backcolor: @blue-color;);
             box-shadow:
@@ -60,7 +81,7 @@
     @media (max-width: @tablet-width){
       .burger {
         position: absolute;
-        top: 10px;
+        top: 30px;
         width: 23px;
         height: 20px;
         margin-left: 100px;
@@ -100,6 +121,9 @@
       }
       #mobile-menu:checked ~ ul{
         .setFlex(@direction: column);
+      }
+      #mobile-menu:checked ~ .burger{
+        top: 10px;
       }
     }
   }

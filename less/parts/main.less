@@ -1,15 +1,29 @@
 /*-------------START - MAIN--------------*/
 .intro{
-//  width: 1200px;
-  padding: 0;
-  overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
-  clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
-  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-    width: @tablet-width;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+  &-photo{
+    .setImgContent(
+      @named:"sedona-photo-desktop.jpg",
+      @namet:"sedona-photo-tablet.jpg",
+      @namem:"sedona-photo-mobile.jpg"
+      );
+      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+        width: @tablet-width;
+      }
+      @media (max-width: @tablet-width){
+        width: @mobile-width;
+      }
   }
-  @media (max-width: @tablet-width){
-    width: @mobile-width;
+  &-text{
+    .zero-centered();
+    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+      width: @tablet-width;
+    }
+    @media (max-width: @tablet-width){
+      width: @mobile-width;
+    }
   }
 }
 .gallery{

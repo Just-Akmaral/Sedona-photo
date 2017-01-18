@@ -272,17 +272,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: row;
-  position: relative;
+  flex-direction: column;
   min-height: 56px;
 }
 .header-logo {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
+  position: absolute;
+  bottom: auto;
+  width: 137px;
   z-index: 50;
   content: url("img/header-logo-desktop.png");
 }
@@ -305,10 +306,11 @@ body {
   .header-logo {
     width: 102px;
     order: 1;
+    position: static;
   }
 }
 .header-navigation {
-  width: 100%;
+  position: relative;
 }
 .header-navigation ul {
   display: flex;
@@ -316,6 +318,7 @@ body {
   justify-content: space-around;
   flex-direction: row;
   margin: 0;
+  padding: 0;
   padding: 10px;
 }
 @media (max-width: 768px) {
@@ -326,10 +329,18 @@ body {
 }
 .header-navigation ul li {
   list-style-type: none;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 14px;
   line-height: 26px;
   font-weight: bold;
+}
+.header-navigation ul li:nth-of-type(4n-2) {
+  margin-right: 230px;
+}
+.header-navigation ul li:nth-of-type(4n-1),
+.header-navigation ul li:nth-of-type(4n) {
+  text-align: right;
 }
 .header-navigation ul li:hover {
   color: #81b3d2;
@@ -337,14 +348,28 @@ body {
 .header-navigation ul li:active {
   color: #cacaca;
 }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .header-navigation ul li:nth-of-type(4n-2) {
+    margin-right: 150px;
+  }
+}
 @media (max-width: 768px) {
   .header-navigation ul li {
+    padding-left: 5x;
+    padding-right: 5x;
     font-size: 18px;
     line-height: 40px;
     font-weight: bold;
     color: white;
     background-color: #81b3d2;
     box-shadow: 0 -1px 0px 0px #9ac2db, 0 -2px 0px 0px #678fa8, 0 1px 0px 0px #678fa8;
+  }
+  .header-navigation ul li:nth-of-type(4n-2) {
+    margin-right: 0px;
+  }
+  .header-navigation ul li:nth-of-type(4n-1),
+  .header-navigation ul li:nth-of-type(4n) {
+    text-align: center;
   }
   .header-navigation ul li:hover {
     background: #669ec0;
@@ -374,7 +399,7 @@ body {
 @media (max-width: 768px) {
   .header-navigation .burger {
     position: absolute;
-    top: 10px;
+    top: 30px;
     width: 23px;
     height: 20px;
     margin-left: 100px;
@@ -420,21 +445,54 @@ body {
     justify-content: center;
     flex-direction: column;
   }
+  .header-navigation #mobile-menu:checked ~ .burger {
+    top: 10px;
+  }
 }
 /*-------------START - MAIN--------------*/
 .intro {
-  padding: 0;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
-  clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
+  padding: 0;
+  position: relative;
+}
+.intro-photo {
+  content: url("img/sedona-photo-desktop.jpg");
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  .intro {
+  .intro-photo {
+    content: url("img/sedona-photo-tablet.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .intro-photo {
+    content: url("img/sedona-photo-mobile.jpg");
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .intro-photo {
     width: 768px;
   }
 }
 @media (max-width: 768px) {
-  .intro {
+  .intro-photo {
+    width: 320px;
+  }
+}
+.intro-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .intro-text {
+    width: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .intro-text {
     width: 320px;
   }
 }
