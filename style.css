@@ -786,17 +786,35 @@ body {
   height: 27px;
   background-image: url("img/replay.svg");
 }
+.video-content .video-controls .replay:hover {
+  background-image: url("img/replay-hvr.svg");
+}
+.video-content .video-controls .replay:active {
+  background-image: url("img/replay-dwn.svg");
+}
 .video-content .video-controls .subtitles {
   right: 125px;
   width: 43px;
   height: 27px;
   background-image: url("img/subtitles.svg");
 }
+.video-content .video-controls .subtitles:hover {
+  background-image: url("img/subtitles-hvr.svg");
+}
+.video-content .video-controls .subtitles:active {
+  background-image: url("img/subtitles-dwn.svg");
+}
 .video-content .video-controls .fullscreen {
   right: 45px;
   width: 27px;
   height: 27px;
   background-image: url("img/fullscreen.svg");
+}
+.video-content .video-controls .fullscreen:hover {
+  background-image: url("img/fullscreen-hvr.svg");
+}
+.video-content .video-controls .fullscreen:active {
+  background-image: url("img/fullscreen-dwn.svg");
 }
 /*-------------START - FOOTER--------------*/
 .main-footer {

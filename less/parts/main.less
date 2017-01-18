@@ -179,25 +179,31 @@
         border: 0;
         z-index: 100;
         top: 35px;
-          @media (max-width: @tablet-width){top: 9px;}
+        @media (max-width: @tablet-width){top: 9px;}
       }
       .replay{
         left: 35px;
         width: 21px;
         height: 27px;
         background-image: url("img/replay.svg");
+        &:hover{background-image: url("img/replay-hvr.svg");}
+        &:active{background-image: url("img/replay-dwn.svg");}
       }
       .subtitles{
         right: 125px;
         width: 43px;
         height: 27px;
         background-image: url("img/subtitles.svg");
+        &:hover{background-image: url("img/subtitles-hvr.svg");}
+        &:active{background-image: url("img/subtitles-dwn.svg");}
       }
       .fullscreen{
         right: 45px;
         width: 27px;
         height: 27px;
         background-image: url("img/fullscreen.svg");
+        &:hover{background-image: url("img/fullscreen-hvr.svg");}
+        &:active{background-image: url("img/fullscreen-dwn.svg");}
       }
     }
   }
