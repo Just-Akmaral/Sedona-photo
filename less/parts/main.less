@@ -1,6 +1,7 @@
 /*-------------START - MAIN--------------*/
 .sedona-photo{
 //  width: 1200px;
+  padding: 0;
   overflow: hidden;
   -webkit-clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
   clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
@@ -9,7 +10,6 @@
   }
   @media (max-width: @tablet-width){
     width: @mobile-width;
-    left: -20px;
   }
 }
 .gallery{
@@ -109,6 +109,12 @@
 .video{
   .setColorStyle(@backcolor: aqua;);
   .setPaddingTB(70px);
+  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+    .setPaddingTB(40px);
+    }
+  @media (max-width: @tablet-width) {
+    .setPaddingTB(25px);
+  }
   h2,p{
     .setPaddingLR(378px);
     .setPaddingTB(17px);
@@ -119,7 +125,7 @@
   }
   h2{
     .setColorStyle(@backcolor: red;);
-    .setTextSize(@size: @dekstop-font-size-h; @height:@dekstop-line-height-h; @weight: bold); // 30 26 bold
+    .setTextSize(@size: @dekstop-font-size-h; @height: @dekstop-line-height-h; @weight: bold); // 30 26 bold
     .setPaddingTB(20px);
       @media (max-width: @tablet-width){
         .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-h; @weight: bold);
@@ -131,8 +137,14 @@
     .setPaddingTB(13px);
     .setMarginTB(35px);
   }
-  &-content{
-    .setMarginTB(35px);
+  video{
+    width: 800px;
+    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+      width: 648px;
+    }
+    @media (max-width: @tablet-width){
+      width: 280px;
+    }
   }
 }
 /*-------------END - MAIN--------------*/

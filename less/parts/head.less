@@ -1,6 +1,5 @@
 /*-------------START - HEAD--------------*/
 .main-header{
-//  .setFlex();
 //  align-items: baseline;
 //  .setColorStyle(@backcolor: yellow;);
   position: relative;
@@ -9,15 +8,14 @@
 .header{
   &-logo{
     .zero-centered();
-    z-index: 100;
+    z-index: 50;
     width: 140px;
     .setImgContent(
       @named:"header-logo-desktop.png",
       @namet:"header-logo-tablet.svg",
-      @namem:"header-logo-mobile.svg"
-      );
-      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {width: 102px;}
-      @media (max-width: @tablet-width){width: 102px;}
+      @namem:"header-logo-mobile.svg");
+    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {width: 102px;}
+    @media (max-width: @tablet-width){width: 102px;}
   }
   &-navigation{
     ul{
@@ -25,14 +23,24 @@
       .setColorStyle(@backcolor: green;);
       margin: 0;
       padding: 10px;
-      @media (max-width: @tablet-width){display: none;}
+      @media (max-width: @tablet-width){display: none;padding: 0;}
       li{
           list-style-type: none;
           padding: 5px;
           .setColorStyle(@backcolor: red;);
           .setTextSize(@height: @dekstop-line-height-h; @weight: bold;);// 14 26 bold
+          &:hover{color: @blue-color;}
+          &:active{color: @grey-color;}
           @media (max-width: @tablet-width){
             .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-li; @weight: bold;);// 18 40 bold}
+            .setColorStyle(@color: white; @backcolor: @blue-color;);
+            box-shadow:
+            0 -1px 0px 0px rgba(154, 194, 219, 1),
+            0 -2px 0px 0px rgba(103, 143, 168, 1),
+            0 1px 0px 0px rgba(103, 143, 168, 1)
+            ;
+            &:hover{background: @blue-color-dark;}
+            &:active{background: @blue-color-medium;color: rgba(148, 185, 210, 1);}
           }
           a{
             color:inherit;
@@ -70,16 +78,6 @@
            top: auto;
            bottom: 0;
          }
-        //  &:hover{
-        //    span,&::after,&::before{
-        //      background-color: @pink-color;
-        //    }
-        //  }
-        //  &:active{
-        //    span,&::after,&::before{
-        //      background-color: @grey-color-medium;;
-        //    }
-        //  }
       }
       #mobile-menu:checked ~ .burger::before,
       #mobile-menu:checked ~ .burger::after{
@@ -88,6 +86,7 @@
         top: auto;
         left: -4px;
         bottom: 5px;
+        background-color: white;
       }
       #mobile-menu:checked ~ .burger::after {
         transform: rotate(45deg);
@@ -101,4 +100,5 @@
     }
   }
 }
+
 /*-------------END - HEAD--------------*/

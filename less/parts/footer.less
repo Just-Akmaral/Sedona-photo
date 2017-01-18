@@ -2,8 +2,16 @@
 .main-footer{
   .setFlex(@content: space-around);
   align-content: center;
+  .setPaddingTB(25px);
+    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+        .setPaddingTB(18px);
+      }
+    @media (max-width: @tablet-width) {
+      .setPaddingTB(10px);
+    }
   .footer{
     &-hashtag{
+      .setPaddingTB(20px);
       b{
         .setTextSize(@size: @dekstop-font-size-p; @height: @dekstop-line-height-h; @weight: bold);//21 26 bold
         padding: 13px 0px;
@@ -11,6 +19,7 @@
     }
     &-social{
       .setFlex(@content: space-between);
+      .setPaddingTB(20px);
       .social-btn{
         display: block;
         vertical-align: top;
@@ -29,6 +38,7 @@
       }
     }
     &-copyright{
+      .setPaddingTB(20px);
       b{
         text-align: right;
         .setTextSize(@height: @dekstop-line-height-h; );//14 26 regular

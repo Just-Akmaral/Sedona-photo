@@ -278,7 +278,7 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  z-index: 100;
+  z-index: 50;
   width: 140px;
   content: url("img/header-logo-desktop.png");
 }
@@ -315,6 +315,7 @@ body {
 @media (max-width: 768px) {
   .header-navigation ul {
     display: none;
+    padding: 0;
   }
 }
 .header-navigation ul li {
@@ -326,11 +327,27 @@ body {
   line-height: 26px;
   font-weight: bold;
 }
+.header-navigation ul li:hover {
+  color: #81b3d2;
+}
+.header-navigation ul li:active {
+  color: #cacaca;
+}
 @media (max-width: 768px) {
   .header-navigation ul li {
     font-size: 18px;
     line-height: 40px;
     font-weight: bold;
+    color: white;
+    background-color: #81b3d2;
+    box-shadow: 0 -1px 0px 0px #9ac2db, 0 -2px 0px 0px #678fa8, 0 1px 0px 0px #678fa8;
+  }
+  .header-navigation ul li:hover {
+    background: #669ec0;
+  }
+  .header-navigation ul li:active {
+    background: #5496bd;
+    color: #94b9d2;
   }
 }
 .header-navigation ul li a {
@@ -376,6 +393,7 @@ body {
     top: auto;
     left: -4px;
     bottom: 5px;
+    background-color: white;
   }
   .header-navigation #mobile-menu:checked ~ .burger::after {
     transform: rotate(45deg);
@@ -392,6 +410,7 @@ body {
 }
 /*-------------START - MAIN--------------*/
 .sedona-photo {
+  padding: 0;
   overflow: hidden;
   -webkit-clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
   clip-path: polygon(0 0, 0 90%, 20% 95%, 20% 90%, 50% 100%, 80% 90%, 80% 95%, 100% 90%, 100% 0);
@@ -404,7 +423,6 @@ body {
 @media (max-width: 768px) {
   .sedona-photo {
     width: 320px;
-    left: -20px;
   }
 }
 .gallery {
@@ -630,6 +648,18 @@ body {
   padding-top: 70px;
   padding-bottom: 70px;
 }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .video {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .video {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
 .video h2,
 .video p {
   padding-left: 378px;
@@ -678,9 +708,18 @@ body {
   margin-top: 35px;
   margin-bottom: 35px;
 }
-.video-content {
-  margin-top: 35px;
-  margin-bottom: 35px;
+.video video {
+  width: 800px;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .video video {
+    width: 648px;
+  }
+}
+@media (max-width: 768px) {
+  .video video {
+    width: 280px;
+  }
 }
 /*-------------START - FOOTER--------------*/
 .main-footer {
@@ -689,6 +728,24 @@ body {
   justify-content: space-around;
   flex-direction: row;
   align-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .main-footer {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .main-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.main-footer .footer-hashtag {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .main-footer .footer-hashtag b {
   font-size: 21px;
@@ -701,6 +758,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .main-footer .footer-social .social-btn {
   display: block;
@@ -727,6 +786,10 @@ body {
 }
 .main-footer .footer-social .icon-facebook {
   content: url("img/facebook.svg") no-repeat center;
+}
+.main-footer .footer-copyright {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .main-footer .footer-copyright b {
   text-align: right;
