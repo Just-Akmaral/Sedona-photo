@@ -1,5 +1,6 @@
 /*-------------START - HEAD--------------*/
 .main-header{
+  .setFlex();
 //  align-items: baseline;
 //  .setColorStyle(@backcolor: yellow;);
   position: relative;
@@ -9,25 +10,23 @@
   &-logo{
     .zero-centered();
     z-index: 50;
-    width: 140px;
     .setImgContent(
       @named:"header-logo-desktop.png",
       @namet:"header-logo-tablet.svg",
       @namem:"header-logo-mobile.svg");
     @media (min-width: @tablet-width) and (max-width: @dekstop-width) {width: 102px;}
-    @media (max-width: @tablet-width){width: 102px;}
+    @media (max-width: @tablet-width){width: 102px;order: 1;}
   }
   &-navigation{
+    width: 100%;
     ul{
       .setFlex(@content: space-around);
-      .setColorStyle(@backcolor: green;);
       margin: 0;
       padding: 10px;
       @media (max-width: @tablet-width){display: none;padding: 0;}
       li{
           list-style-type: none;
           padding: 5px;
-          .setColorStyle(@backcolor: red;);
           .setTextSize(@height: @dekstop-line-height-h; @weight: bold;);// 14 26 bold
           &:hover{color: @blue-color;}
           &:active{color: @grey-color;}
@@ -46,6 +45,11 @@
             color:inherit;
             text-decoration: none;
             outline: none;
+            &.active{
+              color: @brown-color;
+              &:hover{color: @brown-color-dark;}
+              &:active{opacity: 0.7;}
+            }
           }
         }
     }

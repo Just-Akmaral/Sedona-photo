@@ -1,5 +1,5 @@
 /*-------------START - MAIN--------------*/
-.sedona-photo{
+.intro{
 //  width: 1200px;
   padding: 0;
   overflow: hidden;
@@ -75,7 +75,7 @@
             }
             small{
               .setTextSize();//14 24 regular
-              @media (max-width: @tablet-width){text-transform: none;}
+              text-transform: none;
             }
           }
           aside{
@@ -107,11 +107,10 @@
   }
 }
 .video{
-  .setColorStyle(@backcolor: aqua;);
-  .setPaddingTB(70px);
+  .setPaddingTB(45px);
   @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-    .setPaddingTB(40px);
-    }
+    .setPaddingTB(30px);
+  }
   @media (max-width: @tablet-width) {
     .setPaddingTB(25px);
   }
@@ -124,26 +123,82 @@
       @media (max-width: @tablet-width){.setPaddingLR();}
   }
   h2{
-    .setColorStyle(@backcolor: red;);
     .setTextSize(@size: @dekstop-font-size-h; @height: @dekstop-line-height-h; @weight: bold); // 30 26 bold
     .setPaddingTB(20px);
       @media (max-width: @tablet-width){
-        .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-h; @weight: bold);
-      }   // 18 26 bold}
+        .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-h; @weight: bold);// 18 26 bold
+      }
   }
   p{
-    .setColorStyle(@backcolor: green;);
     .setTextSize(); // 14 24 regular
     .setPaddingTB(13px);
     .setMarginTB(35px);
   }
-  video{
+  &-content{
+    display: block;
     width: 800px;
+    position: relative;
+    margin: 0 auto;
     @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
       width: 648px;
     }
     @media (max-width: @tablet-width){
       width: 280px;
+    }
+    video{
+      display: block;
+      width: 800px;
+      background-image: url("img/video-desktop.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+        width: 648px;
+        background-image: url("img/video-tablet.jpg");
+      }
+      @media (max-width: @tablet-width){
+        width: 280px;
+        background-image: url("img/video-mobile.jpg");
+      }
+    }
+    .video-controls{
+      display: block;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 93px;
+      bottom: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+      @media (max-width: @tablet-width){height: 45px;}
+      .replay,.subtitles,.fullscreen{
+        position: absolute;
+        cursor: pointer;
+        display: block;
+        background-color: transparent;
+        padding: 0;
+        border: 0;
+        z-index: 100;
+        top: 35px;
+          @media (max-width: @tablet-width){top: 9px;}
+      }
+      .replay{
+        left: 35px;
+        width: 21px;
+        height: 27px;
+        background-image: url("img/replay.svg");
+      }
+      .subtitles{
+        right: 125px;
+        width: 43px;
+        height: 27px;
+        background-image: url("img/subtitles.svg");
+      }
+      .fullscreen{
+        right: 45px;
+        width: 27px;
+        height: 27px;
+        background-image: url("img/fullscreen.svg");
+      }
     }
   }
 }

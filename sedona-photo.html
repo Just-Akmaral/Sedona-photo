@@ -9,6 +9,9 @@
   </head>
   <body>
     <header class="main-header container">
+      <a class="header-logo">
+          <img src="" width="" alt="Sedona-logo">
+      </a>
       <nav class="header-navigation">
           <input type="checkbox" id="mobile-menu">
           <label class="burger" for="mobile-menu"><span></span></label>
@@ -19,12 +22,9 @@
             <li><a href="#">Html Academy</a></li>
           </ul>
       </nav>
-      <a class="header-logo">
-          <img src="" width="" alt="Sedona-logo">
-      </a>
     </header>
     <main>
-      <section class="sedona-photo container"><!-- как назвать?-->
+      <section class="intro container"><!-- как назвать?-->
         <img class="sedona-photo" src="img/sedona-photo-1.jpg" width="" height="" alt="sedona-photo"/>
       </section>
       <section class="gallery container">
@@ -76,14 +76,20 @@
       <section class="video container">
         <h2>Все еще сомневаетесь?</h2>
         <p>Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
+        <div class="video-content">
           <video
-            controls
             preload="metadata"
             width="" height="">
             <source src="video/sedona-video.mp4" type="video/mp4">
             <source src="video/sedona-video.ogv" type="video/ogg">
             <source src="video/sedona-video.webm" type="video/webm">
           </video>
+          <div class="video-controls">
+            <button class="replay" type="button"></button>
+            <button class="subtitles" type="button"></button>
+            <button class="fullscreen" type="button"></button>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="main-footer container">
@@ -98,7 +104,7 @@
         <section class="footer-copyright">
           <b>Разработано</b>
           <a href="https://htmlacademy.ru">
-            <img src="img/by-htmlacademy.png" width="113" alt="html-academy-logo">
+            <img src="img/htmlacademy-logo.png" width="113" alt="html-academy-logo">
           </a>
         </section>
     </footer>
