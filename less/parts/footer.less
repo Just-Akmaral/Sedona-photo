@@ -3,7 +3,7 @@
   .setFlex(@content: space-around);
   align-content: baseline;
   .setPaddingTB(25px);
-    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+    @media (min-width: @tablet-width) and (max-width: @desktop-width) {
         .setPaddingTB(18px);
       }
     @media (max-width: @tablet-width) {
@@ -16,7 +16,7 @@
       align-items: center;
       .setPaddingTB(20px);
       b{
-        .setTextSize(@size: @dekstop-font-size-p; @height: @dekstop-line-height-h; @weight: bold);//21 26 bold
+        .setTextSize(@size: @desktop-font-size-p; @height: @desktop-line-height-h; @weight: bold);//21 26 bold
       }
     }
     &-social{
@@ -48,7 +48,7 @@
       b{
         .setPaddingLR(10px);
         text-align: right;
-        .setTextSize(@height: @dekstop-line-height-h; );//14 26 regular
+        .setTextSize(@height: @desktop-line-height-h; );//14 26 regular
       }
       img{
         &:hover{content: url("img/htmlacademy-logohvr.png");}

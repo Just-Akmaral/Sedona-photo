@@ -14,39 +14,40 @@
       @named:"header-logo-desktop.png",
       @namet:"header-logo-tablet.svg",
       @namem:"header-logo-mobile.svg");
-    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {width: 102px;}
+    @media (min-width: @tablet-width) and (max-width: @desktop-width) {width: 102px;}
     @media (max-width: @tablet-width){width: 102px; order: 1; position: static;}
   }
   &-navigation{
-  //  width: 100%;
     position: relative;
     ul{
       .setFlex(@content: space-around;);
-      margin: 0;
       padding: 0;
-      padding: 10px;
-      @media (max-width: @tablet-width){display: none;padding: 0;}
+      width: @desktop-width;
+      margin: 0 auto;
+      @media (max-width: @tablet-width){display: none;padding: 0;width:@mobile-width;}
+      @media (min-width: @tablet-width) and (max-width: @desktop-width){width: @tablet-width;}
       li{
           list-style-type: none;
-          .setPaddingTB(5px);
+          padding: 5px;
           &:nth-of-type(4n-2){
             margin-right: 230px;
           }
           &:nth-of-type(4n-1),&:nth-of-type(4n){
             text-align: right;
           }
-          .setTextSize(@height: @dekstop-line-height-h; @weight: bold;);// 14 26 bold
+          .setTextSize(@height: @desktop-line-height-h; @weight: bold;);// 14 26 bold
           &:hover{color: @blue-color;}
           &:active{color: @grey-color;}
-          @media (min-width: @tablet-width) and (max-width: @dekstop-width){
-          //  margin: auto;
+          @media (min-width: @tablet-width) and (max-width: @desktop-width){
             &:nth-of-type(4n-2){
-              margin-right: 150px;
+              margin-left: 30px;
+              margin-right: 180px;
             }
           }
           @media (max-width: @tablet-width){
             .setPaddingLR(5x);
             &:nth-of-type(4n-2){
+                margin-left: 0px;
                 margin-right: 0px;
             }
             &:nth-of-type(4n-1),&:nth-of-type(4n){

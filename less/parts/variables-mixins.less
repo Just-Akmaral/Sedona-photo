@@ -6,7 +6,8 @@
 @blue-color-medium3: rgba(154, 194, 219, 1);
 
 @grey-color: rgba(202, 202, 202, 1);
-@grey-color-dark: rgba(202, 202, 202, 1);
+@grey-color-dark: rgba(234, 234, 234, 1);
+@grey-color-medium: rgba(242, 242, 242, 1);
 
 @caption-color: rgba(72, 84, 97, 0.3);
 
@@ -15,7 +16,7 @@
 
 /**-----------------SCREEN WIDTH----------------------**/
 
-@dekstop-width: 1200px;
+@desktop-width: 1200px;
 @tablet-width: 768px;
 @mobile-width: 320px;
 
@@ -57,11 +58,11 @@ p 14 24 like desktop
 hashtag 21 26 like desktop
 разработано 14 26 like desktop
 **/
-@dekstop-font-size: 14px;
-@dekstop-font-size-p: @dekstop-font-size + 7; // 21
-@dekstop-font-size-h: @dekstop-font-size + 16; // 30
-@dekstop-line-height: 24px; // 24
-@dekstop-line-height-h: @dekstop-line-height + 2; // 26
+@desktop-font-size: 14px;
+@desktop-font-size-p: @desktop-font-size + 7; // 21
+@desktop-font-size-h: @desktop-font-size + 16; // 30
+@desktop-line-height: 24px; // 24
+@desktop-line-height-h: @desktop-line-height + 2; // 26
 
 @tablet-font-size: 14px;
 @tablet-font-size-p: @tablet-font-size + 7; // 21
@@ -98,7 +99,7 @@ hashtag 21 26 like desktop
   text-transform: uppercase;
 }
 
-.setTextSize(@size: @dekstop-font-size; @height: @dekstop-line-height; @weight: normal) {
+.setTextSize(@size: @desktop-font-size; @height: @desktop-line-height; @weight: normal) {
  font-size: @size;
  line-height: @height;
  font-weight: @weight;
@@ -141,7 +142,7 @@ hashtag 21 26 like desktop
 }
 .setImgContent(@named, @namet, @namem){
   content: url("img/@{named}");
-  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
     content: url("img/@{namet}");
   }
   @media (max-width: @tablet-width) {
@@ -151,13 +152,25 @@ hashtag 21 26 like desktop
  .setImgRetinaContent(@name1xd, @name2xd, @name1xt, @name2xt, @name1xm, @name2xm){
   content: url("img/@{name1xd}");
   content: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
-  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
     content: url("img/@{name1xt}");
     content: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
    }
    @media (max-width: @tablet-width) {
      content: url("img/@{name1xm}");
      content: -webkit-image-set(url("img/@{name1xm}") 1x, url("img/@{name2xm}") 2x);
+   }
+ }
+ .setRetinaBackground(@name1xd, @name2xd, @name1xt, @name2xt, @name1xm, @name2xm){
+  background-image: url("img/@{name1xd}");
+  background-image: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+    background-image: url("img/@{name1xt}");
+    background-image: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
+   }
+   @media (max-width: @tablet-width) {
+     background-image: url("img/@{name1xm}");
+     background-image: -webkit-image-set(url("img/@{name1xm}") 1x, url("img/@{name2xm}") 2x);
    }
  }
  .setGalleryPhoto(@number: 1){
@@ -174,17 +187,3 @@ hashtag 21 26 like desktop
      }
    }
  }
-// .setMapImg(@name1xd, @name2xd, @name1xt, @name2xt, @name1xm, @name2xm){
-//   background-image: url("img/@{name1xd}");
-//   background-image: -webkit-image-set(url("img/@{name1xd}") 1x, url("img/@{name2xd}") 2x);
-//   background-size: cover;
-//   @media (max-width: @tablet-width) {
-//     background-image: url("img/@{name1xm}");
-//     background-image: -webkit-image-set(url("img/@{name1xm}") 1x, url("img/@{name2xm}") 2x);
-//   }
-//
-//   @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-//     background-image: url("img/@{name1xt}");
-//     background-image: -webkit-image-set(url("img/@{name1xt}") 1x, url("img/@{name2xt}") 2x);
-//   }
-// }

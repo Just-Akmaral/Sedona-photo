@@ -9,7 +9,7 @@
       @namet:"sedona-photo-tablet.jpg",
       @namem:"sedona-photo-mobile.jpg"
       );
-      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+      @media (min-width: @tablet-width) and (max-width: @desktop-width) {
         width: @tablet-width;
       }
       @media (max-width: @tablet-width){
@@ -18,11 +18,11 @@
   }
   &-text{
     .zero-centered();
-    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-      width: @tablet-width;
+    @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+      width: 475px;
     }
     @media (max-width: @tablet-width){
-      width: @mobile-width;
+      width: 280px;
     }
   }
 }
@@ -32,13 +32,13 @@
     margin: 0;
     .setPaddingLR(378px);
     .setPaddingTB(17px);
-      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {.setPaddingLR(165px);}
+      @media (min-width: @tablet-width) and (max-width: @desktop-width) {.setPaddingLR(100px);}
       @media (max-width: @tablet-width){.setPaddingLR();}
   }
   h1{
     .setPaddingTB(20px);
     margin-top: 60px;
-    .setTextSize(@size: @dekstop-font-size-h; @height: @dekstop-line-height-h; @weight: bold); // 30 26 bold
+    .setTextSize(@size: @desktop-font-size-h; @height: @desktop-line-height-h; @weight: bold); // 30 26 bold
     @media (max-width: @tablet-width){
       .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-h; @weight: bold);// 18 26 bold}
     }
@@ -49,7 +49,7 @@
     .setTextSize(); // 14 24 regular
   }
   &-content{
-    .setFlex();
+    .setFlex(@content: flex-start;);
     figure{
       margin: 0;
       flex-grow: 1;
@@ -60,6 +60,7 @@
       .setGalleryPhoto(2);
       .setGalleryPhoto(3);
       .setGalleryPhoto(4);
+      &:last-of-type{flex-grow: 0;}
       figcaption{
           text-align: left;
           .setColorStyle(@color: white; @backcolor: @caption-color;);
@@ -70,9 +71,9 @@
           right: 0;
           .setFlex(@content: space-between;);
           align-items: center;
-          @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+          @media (min-width: @tablet-width) and (max-width: @desktop-width) {
             position: static;
-            .setColorStyle(@backcolor: @grey-color-dark;);
+            .setColorStyle(@backcolor: @grey-color-medium;);
           }
           @media (max-width: @tablet-width){
             position: static;
@@ -111,18 +112,23 @@
                   );
                   @media (max-width: @tablet-width){
                     position: static;
-                    margin-right: 0;
+                    margin-right: 15px;
                   }
               }
             }
           }
         }
+      @media (min-width: @tablet-width) and (max-width: @desktop-width){
+        &:nth-of-type(2n+1):not(:nth-of-type(1)){
+          figcaption{background-color: @grey-color-dark;}
+        }
+      }
     }
   }
 }
 .video{
   .setPaddingTB(45px);
-  @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
     .setPaddingTB(30px);
   }
   @media (max-width: @tablet-width) {
@@ -131,13 +137,13 @@
   h2,p{
     .setPaddingLR(378px);
     .setPaddingTB(17px);
-      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
-        .setPaddingLR(165px);
+      @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+        .setPaddingLR(100px);
       }
       @media (max-width: @tablet-width){.setPaddingLR();}
   }
   h2{
-    .setTextSize(@size: @dekstop-font-size-h; @height: @dekstop-line-height-h; @weight: bold); // 30 26 bold
+    .setTextSize(@size: @desktop-font-size-h; @height: @desktop-line-height-h; @weight: bold); // 30 26 bold
     .setPaddingTB(20px);
       @media (max-width: @tablet-width){
         .setTextSize(@size: @mobile-font-size-h; @height: @mobile-line-height-h; @weight: bold);// 18 26 bold
@@ -153,7 +159,7 @@
     width: 800px;
     position: relative;
     margin: 0 auto;
-    @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+    @media (min-width: @tablet-width) and (max-width: @desktop-width) {
       width: 648px;
     }
     @media (max-width: @tablet-width){
@@ -165,11 +171,12 @@
       background-image: url("img/video-desktop.jpg");
       background-position: center;
       background-repeat: no-repeat;
-      @media (min-width: @tablet-width) and (max-width: @dekstop-width) {
+      @media (min-width: @tablet-width) and (max-width: @desktop-width) {
         width: 648px;
         background-image: url("img/video-tablet.jpg");
       }
       @media (max-width: @tablet-width){
+        margin-bottom: 66px;
         width: 280px;
         background-image: url("img/video-mobile.jpg");
       }
@@ -183,8 +190,19 @@
       bottom: 0;
       z-index: 1;
       background-color: rgba(0, 0, 0, 0.6);
-      @media (max-width: @tablet-width){height: 45px;}
-      .replay,.subtitles,.fullscreen{
+      @media (max-width: @tablet-width){
+        height: 45px;
+        &:after{
+          display: block;
+          content: "";
+          position: absolute;
+          top: 45px;
+          width: 280px;
+          height: 66px;
+          background-color: @grey-color-medium;
+        }
+      }
+      button{
         position: absolute;
         cursor: pointer;
         display: block;
@@ -193,31 +211,66 @@
         border: 0;
         z-index: 100;
         top: 35px;
-        @media (max-width: @tablet-width){top: 9px;}
+        @media (max-width: @tablet-width){top: 67px;}
       }
       .replay{
-        left: 35px;
+        left: 5%;
         width: 21px;
         height: 27px;
         background-image: url("img/replay.svg");
         &:hover{background-image: url("img/replay-hvr.svg");}
         &:active{background-image: url("img/replay-dwn.svg");}
+        @media (max-width: @tablet-width){
+          background-image: url("img/replay-mobile.svg");
+        }
+      }
+      .volume-scale{
+        top: 50%;//35px
+        left: 11.5%;
+        width: 540px;
+        height: 3px;
+        background-image: url("img/volume-scale-desktop.png");
+        @media (max-width: @tablet-width){
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: 235px;
+          background-image: url("img/volume-scale-mobile.png");
+        }
+        @media (min-width: @tablet-width) and (max-width: @desktop-width){
+          width: 389px;
+          background-image: url("img/volume-scale-tablet.png");
+        }
+      }
+      .volume-slider{
+        top: 50% - 5px;
+        left: 150px;
+        width: 11px;
+        height: 10px;
+        background-image: url("img/volume-slider.png");
       }
       .subtitles{
-        right: 125px;
+        right: 12%;//125px;
         width: 43px;
         height: 27px;
         background-image: url("img/subtitles.svg");
         &:hover{background-image: url("img/subtitles-hvr.svg");}
         &:active{background-image: url("img/subtitles-dwn.svg");}
+        @media (max-width: @tablet-width){
+          right: 20%;
+          background-image: url("img/subtitles-mobile.svg");
+        }
       }
       .fullscreen{
-        right: 45px;
+        right: 5%;//45px
         width: 27px;
         height: 27px;
         background-image: url("img/fullscreen.svg");
         &:hover{background-image: url("img/fullscreen-hvr.svg");}
         &:active{background-image: url("img/fullscreen-dwn.svg");}
+        @media (max-width: @tablet-width){
+          background-image: url("img/fullscreen-mobile.svg");
+        }
       }
     }
   }
